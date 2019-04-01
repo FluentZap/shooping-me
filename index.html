@@ -13,28 +13,28 @@
     <div class="container">
       <div id="questions" class="row justify-content-center">
         <div class="col-5">
-          <h1>My Favorite things</h1>
-          <form id="form-favorite">
-            <div class="form-group">
-              <label id="SelectedThing" for="form-favoriteThing">First Favorite thing!</label>
-              <input type="text" class="form-control" id="form-favoriteThing" placeholder="Pizza">
+          <h1>Shooping List</h1>
+          <form id="form-list">
+
+            <div id="inputGroup" class="form-group hidden">
+              <label for="formGroupExampleInput">Enter Item</label>
+              <input type="text" class="form-control" placeholder="Example input">
             </div>
-            <button type="submit" class="btn btn-primary">Next</button>
+
+            <button type="button" id="addItem" class="centered btn btn-success">Add another item</button>
+            <button type="submit" class="btn btn-primary">Finish</button>
           </form>
+          <ul class="col-5" id="finalList">
+
+          </ul>
         </div>
       </div>
-
-
-
-        <div id="answers" class="row justify-content-center">
-          <div class="col-5">
-            <h1>Your favorite things are!</h1>
-            <ul id="favorite-display-list">
-            </ul>
-          </div>
-        </div>
-
 
     </div>
   </body>
 </html>
+
+<!-- <div id="inputGroup" class="form-group">
+  <label for="formGroupExampleInput">Example label</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+</div> -->
