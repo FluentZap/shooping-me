@@ -1,29 +1,22 @@
-var favorites_list = [];
-var prompts = ["Favorite food?", "Favorite drink?", "Favorite animal?"];
+var shooping_list = [];
 var index = 0;
+
 $(document).ready(function () {
-  $("#SelectedThing").text(prompts[index]);
-
-  $("#form-favorite").submit(function (event) {
+  $("#formList").submit(function(event) {
     event.preventDefault();
+    shooping_list = [$("#item1").val(), $("#item2").val(), $("#item3").val(), $("#item4").val()];
 
-    favorites_list.push($("#form-favoriteThing").val());
-    $("#form-favoriteThing").val("");
+    $("#questions").fadeOut(function () {
+        shooping_list.sort();
+        shooping_list.forEach(function(shooping_item) {
 
-    index++;
-    $("#SelectedThing").text(prompts[index]);
-
-    if (index > prompts.length - 1)
-    {
-      $("#questions").fadeOut(function () {
-        favorites_list.forEach(function(favorite) {
-          $("#favorite-display-list").append("<li>" + favorite + "</li>");
+          if (shooping_item !== "") {
+            shooping_item = shooping_item.toUpperCase();
+            $("#shopping-display-list").append("<li>" + shooping_item + "</li>");
+            console.log(shooping_item);
+          }
         });
-
         $("#answers").fadeIn();
-      });
-
-    }
-
+    });
   });
 });
